@@ -5,13 +5,6 @@ public class Estudiante {
     private String apellido;
     private String semestreActual;
 
-    public Estudiante(String id, String nombre, String apellido, String semestreActual) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.semestreActual = semestreActual;
-    }
-
     public String getId() {
         return id;
     }

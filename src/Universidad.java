@@ -1,14 +1,85 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Universidad {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         Scanner scanner = new Scanner(System.in);
-        String nombre;
-        nombre = scanner.nextLine();
+        int opcion;
+        List<Estudiante> estudiante = new ArrayList<>();
+        List<Profesor> profesor = new ArrayList<>();
+        List<Asignaturas> asignatura = new ArrayList<>();
 
-        Profesor profesor = new Profesor("20211002590",nombre,"Aroca","Tiempo Completo");
-        System.out.println(profesor);
+        do {
+            System.out.println("Ingrese una opción");
+            System.out.println("1. Registre Estudiante");
+            System.out.println("2. Registro Profesor");
+            System.out.println("3. Resgistro de Materias");
+            System.out.println("0. Salir del programa");
+            opcion = scanner.nextInt();
+            switch (opcion){
+                case 1:
+                    try {
+                        System.out.println("Ingrese el ID del estudiante");
+                        String id = scanner.next();
+                        System.out.println("Ingrese el nombre del estudiante");
+                        String nombre = scanner.next();
+                        System.out.println("Ingrese apellido del estudiante");
+                        String apellido = scanner.next();
+                        System.out.println("Ingrese el semestre actual del estudiante");
+                        String semestre = scanner.next();
+
+                        Estudiante est = new Estudiante();
+                        est.setId(id);
+                        est.setNombre(nombre);
+                        est.setApellido(apellido);
+                        est.setSemestreActual(semestre);
+                        estudiante.add(est);
+                        estudiante.forEach((e) -> System.out.println("Identificacion: " + e.getId() + "\nNombre: " + e.getNombre()
+                                + "\nApellido: " + e.getApellido() + "\nTipo contrato: " + e.getSemestreActual()));
+
+                    }catch (Exception e){
+                        System.out.println("Error: " + e.getMessage());
+                    }
+                    break;
+                case 2:
+                    try {
+                        System.out.println("Ingrese el ID del profesor");
+                        String id = scanner.next();
+                        System.out.println("Ingrese el nombre del profesor");
+                        String nombre = scanner.next();
+                        System.out.println("Ingrese apellido del profesor");
+                        String apellido = scanner.next();
+                        System.out.println("Ingrese el tipo de contrato del profesor");
+                        String contrato = scanner.next();
+
+                        Profesor pro = new Profesor();
+                        pro.setId(id);
+                        pro.setNombre(nombre);
+                        pro.setApellido(apellido);
+                        pro.setTipoContrato(contrato);
+                        profesor.add(pro);
+                        profesor.forEach((p) -> System.out.println("Identificacion: " + p.getId() + "\nNombre: " + p.getNombre()
+                        + "\nApellido: " + p.getApellido() + "\nTipo contrato: " + p.getTipoContrato()));
+
+                    }catch (Exception e){
+                        System.out.println("Error: " + e.getMessage());
+                    }
+                case 3:
+                    try {
+
+
+                    }catch (Exception e){
+                        System.out.println("Error: " + e.getMessage());
+                    }
+
+
+
+            }
+
+        }while (opcion != 0);
+
+
+
 
     }
 }

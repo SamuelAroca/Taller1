@@ -5,13 +5,6 @@ public class Profesor {
     private String apellido;
     private String tipoContrato;
 
-    public Profesor(String id, String nombre, String apellido, String tipoContrato) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.tipoContrato = tipoContrato;
-    }
-
     public String getId() {
         return id;
     }

@@ -4,11 +4,6 @@ public abstract class Asignaturas {
     private Estudiante estudiante;
     private Integer nota;
 
-    public Asignaturas(Profesor profesor, Estudiante estudiante, Integer nota) {
-        this.profesor = profesor;
-        this.estudiante = estudiante;
-        this.nota = nota;
-    }
 
     public Profesor getProfesor() {
         return profesor;
