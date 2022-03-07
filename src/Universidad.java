@@ -66,6 +66,21 @@ public class Universidad {
                     }
                 case 3:
                     try {
+                        System.out.println("Registro de materias (Tenga en cuenta que el estudiante \ny el profesor tienen que estar registrados)");
+                        System.out.println(" ");
+                        System.out.println("Ingrese el nombre del estudiante");
+                        String nEstudiante = scanner.next();
+                        System.out.println("Ingrese el nombre del profesor");
+                        String nProfesor = scanner.next();
+                        System.out.println("Ingrese la nota del estudiante");
+                        Float nota = scanner.nextFloat();
+
+                        Asignaturas asig = new Asignaturas();
+                        asig.setEstudiante(nEstudiante);
+                        asig.setProfesor(nProfesor);
+                        asig.notaCorrespondiente(nota);
+                        asignatura.add(asig);
+
 
 
                     }catch (Exception e){

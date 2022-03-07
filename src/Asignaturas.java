@@ -1,31 +1,43 @@
-public abstract class Asignaturas {
+public class Asignaturas {
 
-    private Profesor profesor;
-    private Estudiante estudiante;
-    private Integer nota;
+    private String profesor;
+    private String estudiante;
+    private Float nota;
 
 
-    public Profesor getProfesor() {
+    public String getProfesor() {
         return profesor;
     }
 
-    public void setProfesor(Profesor profesor) {
+    public void setProfesor(String profesor) {
         this.profesor = profesor;
     }
 
-    public Estudiante getEstudiante() {
+    public String getEstudiante() {
         return estudiante;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
+    public void setEstudiante(String estudiante) {
         this.estudiante = estudiante;
     }
 
-    public Integer getNota() {
+    public float getNota() {
         return nota;
     }
 
-    public void setNota(Integer nota) {
+    public void setNota(Float nota) {
         this.nota = nota;
     }
+
+    public void notaCorrespondiente(Float nota) throws Exeption{
+        if (nota > 5.0 || nota < 0){
+            throw new Exeption("La nota esta fuera de los limites");
+        }
+    }
+
+    public void regisEstudiante(){
+
+    }
+
+
 }
