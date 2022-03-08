@@ -27,7 +27,7 @@ public class Universidad {
                 case 1:
                     try {
                         System.out.println("Ingrese el ID del estudiante");
-                        Integer id = scanner.nextInt();
+                        String id = scanner.next();
                         System.out.println("Ingrese el nombre del estudiante");
                         String nombre = scanner.next();
                         System.out.println("Ingrese apellido del estudiante");
@@ -59,6 +59,7 @@ public class Universidad {
                         System.out.println("Error: " + e.getMessage());
                     }
                     break;
+
                 case 2:
                     try {
                         System.out.println("Ingrese el ID del profesor");
@@ -95,41 +96,50 @@ public class Universidad {
                         System.out.println("Error: " + e.getMessage());
                     }
                     break;
+
                 case 3:
                     try {
-                        System.out.println("Registro de materias (Tenga en cuenta que el estudiante \ny el profesor tienen que estar registrados)");
+                        System.out.println("Registro de notas (Tenga en cuenta que el estudiante \ny el profesor tienen que estar registrados \ny ademas las notas son 4,5 no 4.5)");
                         System.out.println(" ");
                         System.out.println("Ingrese el nombre de la materia");
                         String nMateria = scanner.next();
                         System.out.println("Ingrese el ID del estudiante");
-                        int idEstudiante = scanner.nextInt();
+                        String idEstudiante = scanner.next();
 
-                        if (idEstudiante == 1234){
-                            System.out.println("Estudiante registrado");
-                            System.out.println("Ingrese el nombre del profesor");
-                            int nProfesor = scanner.nextInt();
+                        for (Estudiante estudiante1 : ideEstudiante){
 
-                                if (nProfesor == 4321){
-                                    System.out.println("Profesor registrado");
-                                    Asignaturas asig = new Asignaturas();
-                                    System.out.println("Ingrese la nota del estudiante");
-                                    float nota = scanner.nextFloat();
-                                    asig.notaCorrespondiente(nota);
-                                    asig.setnMateria(nMateria);
-                                    asig.setIestudiante(idEstudiante);
-                                    asig.setProfesor(nProfesor);
-                                    asignatura.add(asig);
-                                    asignatura.forEach((a) -> System.out.println("Nota: " + a.getNota() + "ID: " + a.getIestudiante()));
+                            if (idEstudiante.equals(estudiante1.getId())){
+                                System.out.println("Estudiante registrado");
+                                System.out.println("Ingrese la identificacion del profesor");
+                                String nProfesor = scanner.next();
 
-                                }else
-                                    System.out.println("El profesor no esta registrado");
-                        }else
-                            System.out.println("El estudiante no esta registrado");
+                                for (Profesor profesor1 : ideprofesor){
+
+                                    if (nProfesor.equals(profesor1.getId())){
+                                        System.out.println("Profesor registrado");
+                                        Asignaturas asig = new Asignaturas();
+                                        System.out.println("Ingrese la nota del estudiante");
+                                        float nota = scanner.nextFloat();
+                                        asig.notaCorrespondiente(nota);
+                                        asig.setnMateria(nMateria);
+                                        asig.setIestudiante(idEstudiante);
+                                        asig.setProfesor(nProfesor);
+                                        asignatura.add(asig);
+
+                                        asignatura.forEach((a) -> System.out.println("Materia" + a.getnMateria() + "\nNota: " + a.getNota() + "\nID: " + a.getIestudiante()));
+
+                                    }else
+                                        System.out.println("El profesor no esta registrado");
+                                }
+                            }else
+                                System.out.println("El estudiante no esta registrado");
+                        }
                     }catch (Exception e){
                         System.out.println("Error: " + e.getMessage());
                     }
                     break;
             }
+        System.out.println(" ");
         }while (opcion != 0);
     }
 }
