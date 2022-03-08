@@ -1,25 +1,34 @@
 public class Asignaturas {
 
-    private String profesor;
-    private String estudiante;
+    private String nMateria;
+    private Integer profesor;
+    private Integer iestudiante;
     private Float nota;
 
+    public String getnMateria() {
+        return nMateria;
+    }
 
-    public String getProfesor() {
+    public void setnMateria(String nMateria) {
+        this.nMateria = nMateria;
+    }
+
+    public Integer getIestudiante() {
+        return iestudiante;
+    }
+
+    public void setIestudiante(Integer iestudiante) {
+        this.iestudiante = iestudiante;
+    }
+
+    public Integer getProfesor() {
         return profesor;
     }
 
-    public void setProfesor(String profesor) {
+    public void setProfesor(Integer profesor) {
         this.profesor = profesor;
     }
 
-    public String getEstudiante() {
-        return estudiante;
-    }
-
-    public void setEstudiante(String estudiante) {
-        this.estudiante = estudiante;
-    }
 
     public float getNota() {
         return nota;
@@ -29,10 +38,11 @@ public class Asignaturas {
         this.nota = nota;
     }
 
-    public void notaCorrespondiente(Float nota) throws Exeption{
-        if (nota > 5.0 || nota < 0){
+    public void notaCorrespondiente(float nota) throws Exeption{
+        if (nota > 5 || nota < 0){
             throw new Exeption("La nota esta fuera de los limites");
-        }
+        }else
+            this.nota = nota;
     }
 
     public void regisEstudiante(){

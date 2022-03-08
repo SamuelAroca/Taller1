@@ -1,15 +1,15 @@
 public class Estudiante {
 
-    private String id;
+    private Integer id;
     private String nombre;
     private String apellido;
-    private String semestreActual;
+    private Integer semestreActual;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -29,11 +29,11 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public String getSemestreActual() {
+    public Integer getSemestreActual() {
         return semestreActual;
     }
 
-    public void setSemestreActual(String semestreActual) {
+    public void setSemestreActual(Integer semestreActual) {
         this.semestreActual = semestreActual;
     }
 }
