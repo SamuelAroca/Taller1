@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class University {
 
@@ -11,6 +10,7 @@ public class University {
 
             do {
                 System.out.println("Ingrese una opción");
+                System.out.println();
                 System.out.println("1. Registre Estudiante");
                 System.out.println("2. Registro Profesor");
                 System.out.println("3. Resgistro de Materias");
@@ -21,14 +21,16 @@ public class University {
                         try {
                             System.out.println("Ingrese el ID del estudiante");
                             Integer id = scanner.nextInt();
+                            System.out.println();
                             System.out.println("Ingrese el nombre del estudiante");
                             String nombre = scanner.next();
+                            System.out.println();
                             System.out.println("Ingrese apellido del estudiante");
                             String apellido = scanner.next();
+                            System.out.println();
                             System.out.println("Ingrese el semestre actual del estudiante");
                             int semestre = scanner.nextInt();
-
-
+                            System.out.println();
 
                             Estudiante est = new Estudiante();
 
@@ -44,7 +46,6 @@ public class University {
                                     e.getId() + "\nSemestre Actual: " + e.getSemestreActual() + "\n "));
                             break;
 
-
                         }catch (Exception e){
                             System.out.println("Error: " + e.getMessage());
                         }
@@ -54,12 +55,16 @@ public class University {
                         try {
                             System.out.println("Ingrese el ID del profesor");
                             Integer id = scanner.nextInt();
+                            System.out.println();
                             System.out.println("Ingrese el nombre del profesor");
                             String nombre = scanner.next();
+                            System.out.println();
                             System.out.println("Ingrese apellido del profesor");
                             String apellido = scanner.next();
+                            System.out.println();
                             System.out.println("Ingrese el tipo de contrato del profesor, \ntiene que ser (Completo o Catedra)");
                             String contrato = scanner.next();
+                            System.out.println();
                             if (contrato.equals("Completo") || contrato.equals("Catedra")){
                                 Profesor pro = new Profesor();
 
@@ -73,11 +78,7 @@ public class University {
                                 System.out.println("Profesores registrados del registro:");
                                 profesor.forEach((p) -> System.out.println("Nombre: " + p.getNombre() + "\nApellido: " + p.getApellido()
                                         + "\nIdentificacion: " + p.getId() + "\nTipo de contrato: " + p.getTipoContrato() + "\n "));
-                                break;
-
-                            }else
-                                System.out.println("Puso mal el tipo de contrato");
-
+                            }
                         }catch (Exception e){
                             System.out.println("Error: " + e.getMessage());
                         }
@@ -89,8 +90,11 @@ public class University {
                             System.out.println(" ");
                             System.out.println("Ingrese el nombre de la materia");
                             String nMateria = scanner.next();
+                            System.out.println();
                             System.out.println("Ingrese el ID del estudiante");
                             int idEstudiante = scanner.nextInt();
+                            System.out.println();
+
 
                             for (Estudiante estudiante1 : estudiante){
                                 List<Asignaturas> asignatura = new ArrayList<>();
@@ -103,21 +107,21 @@ public class University {
                                 
                                     for (Profesor profesor1 : profesor){
 
-
                                         if (nProfesor == profesor1.getId()){
 
                                             System.out.println("Profesor registrado");
                                             Asignaturas asig = new Asignaturas();
+                                            System.out.println();
                                             System.out.println("Ingrese la nota del estudiante");
                                             float nota = scanner.nextFloat();
+                                            System.out.println();
                                             asig.notaCorrespondiente(nota);
-
-                                            System.out.println("Porfavor diganos en que posicion registro al alunmo \nsiendo 0 la primera y 1, 2, etc las siguientes");
+                                            System.out.println("Porfavor diganos en que posicion registro al alunmo siendo 0 la primera y 1, 2, etc las siguientes");
                                             int n = scanner.nextInt();
-                                            System.out.println("Porfavor diganos en que posicion registro al profesor \nsiendo 0 la primera y 1, 2, etc las siguientes");
+                                            System.out.println();
+                                            System.out.println("Porfavor diganos en que posicion registro al profesor siendo 0 la primera y 1, 2, etc las siguientes");
                                             int m = scanner.nextInt();
-
-
+                                            System.out.println();
 
                                             asig.setnMateria(nMateria);
                                             asig.setIestudiante(idEstudiante);
@@ -129,25 +133,18 @@ public class University {
                                                         + "\nIdentificacion del estudiante: " + estudiante.get(i).getId() + "\nSemetre: " + estudiante.get(i).getSemestreActual() + "\n");
                                                 break;
                                             }
-
                                             asignatura.forEach((b) -> System.out.println("ID: " + b.getIestudiante() + "\nMateria: " + b.getnMateria() + "\nNota: " + b.getNota()
                                                      + "\n "));
 
                                             for (int i = m; i < profesor.size();) {
-                                                System.out.println("Calificado por el profesor: " + profesor.get(i).getNombre() + " " + profesor.get(i).getApellido());
+                                                System.out.println("Calificado por el profesor: " + profesor.get(i).getNombre() + " " + profesor.get(i).getApellido() + "\n");
                                                 break;
                                             }
 
                                             asignatura.clear();
-
-                                        break;
-                                        }else{
-                                            System.out.println("El profesor no esta registrado");
                                         }
                                     }
-                                    break;
-                                }else
-                                    System.out.println("El estudiante no esta registrado");
+                                }
                             }
                             break;
                         }catch (Exception e){
@@ -159,7 +156,3 @@ public class University {
         }
     }
 }
-/*
-System.out.println("Calificado por el profesor: " + c.getNombre() + " " +c.getApellido()
-        + "\nCon identificacion numero: " + c.getId())
-*/

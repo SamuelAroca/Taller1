@@ -45,8 +45,4 @@ public class Estudiante {
         }else
             this.semestreActual = semestre;
     }
-
-    public void posicionAlumno(int n, List<Estudiante> estudiante) throws Exeption{
-
-    }
 }

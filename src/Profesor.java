@@ -36,6 +36,4 @@ public class Profesor {
     public void setTipoContrato(String tipoContrato) {
         this.tipoContrato = tipoContrato;
     }
-
-
 }
