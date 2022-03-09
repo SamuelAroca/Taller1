@@ -1,8 +1,8 @@
 public class Asignaturas {
 
     private String nMateria;
-    private String profesor;
-    private String iestudiante;
+    private Integer profesor;
+    private Integer iestudiante;
     private Float nota;
 
     public String getnMateria() {
@@ -13,22 +13,21 @@ public class Asignaturas {
         this.nMateria = nMateria;
     }
 
-    public String getIestudiante() {
+    public Integer getIestudiante() {
         return iestudiante;
     }
 
-    public void setIestudiante(String iestudiante) {
+    public void setIestudiante(Integer iestudiante) {
         this.iestudiante = iestudiante;
     }
 
-    public String getProfesor() {
+    public Integer getProfesor() {
         return profesor;
     }
 
-    public void setProfesor(String profesor) {
+    public void setProfesor(Integer profesor) {
         this.profesor = profesor;
     }
-
 
     public float getNota() {
         return nota;
@@ -44,10 +43,4 @@ public class Asignaturas {
         }else
             this.nota = nota;
     }
-
-    public void regisEstudiante(){
-
-    }
-
-
 }

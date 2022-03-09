@@ -1,15 +1,17 @@
+import java.util.List;
+
 public class Estudiante {
 
-    private String id;
+    private Integer id;
     private String nombre;
     private String apellido;
     private Integer semestreActual;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -35,5 +37,16 @@ public class Estudiante {
 
     public void setSemestreActual(Integer semestreActual) {
         this.semestreActual = semestreActual;
+    }
+
+    public void rangoSemestre(int semestre) throws Exeption{
+        if (semestre < 1 || semestre > 10){
+            throw new Exeption("El semestre esta fuera del rango");
+        }else
+            this.semestreActual = semestre;
+    }
+
+    public void posicionAlumno(int n, List<Estudiante> estudiante) throws Exeption{
+
     }
 }

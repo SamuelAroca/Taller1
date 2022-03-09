@@ -1,15 +1,15 @@
 public class Profesor {
 
-    private String id;
+    private Integer id;
     private String nombre;
     private String apellido;
     private String tipoContrato;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -37,8 +37,5 @@ public class Profesor {
         this.tipoContrato = tipoContrato;
     }
 
-    public void contratoPro(String contrato){
 
-
-    }
 }
