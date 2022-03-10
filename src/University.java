@@ -112,7 +112,7 @@ public class University {
                                             System.out.println("Profesor registrado");
                                             Asignaturas asig = new Asignaturas();
                                             System.out.println();
-                                            System.out.println("Ingrese la nota del estudiante");
+                                            System.out.println("Registre la nota del estudiante");
                                             float nota = scanner.nextFloat();
                                             System.out.println();
                                             asig.notaCorrespondiente(nota);
