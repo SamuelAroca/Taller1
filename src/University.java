@@ -65,7 +65,7 @@ public class University {
                             System.out.println("Ingrese el tipo de contrato del profesor, \ntiene que ser (Completo o Catedra)");
                             String contrato = scanner.next();
                             System.out.println();
-                            if (contrato.equals("Completo") || contrato.equals("Catedra")){
+                            if (contrato.equalsIgnoreCase("Completo") || contrato.equalsIgnoreCase("Catedra")){
                                 Profesor pro = new Profesor();
 
                                 pro.setId(id);
@@ -104,7 +104,7 @@ public class University {
                                     System.out.println("Estudiante registrado");
                                     System.out.println("Ingrese la identificacion del profesor");
                                     int nProfesor = scanner.nextInt();
-                                
+
                                     for (Profesor profesor1 : profesor){
 
                                         if (nProfesor == profesor1.getId()){
@@ -134,7 +134,7 @@ public class University {
                                                 break;
                                             }
                                             asignatura.forEach((b) -> System.out.println("ID: " + b.getIestudiante() + "\nMateria: " + b.getnMateria() + "\nNota: " + b.getNota()
-                                                     + "\n "));
+                                                    + "\n "));
 
                                             for (int i = m; i < profesor.size();) {
                                                 System.out.println("Calificado por el profesor: " + profesor.get(i).getNombre() + " " + profesor.get(i).getApellido() + "\n");
@@ -149,8 +149,8 @@ public class University {
                             break;
                         }catch (Exception e){
                             System.out.println("Error: " + e.getMessage());
-                    }
-                    break;
+                        }
+                        break;
                 }
             }while (opcion != 0);
         }
