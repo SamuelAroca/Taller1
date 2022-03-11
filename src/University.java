@@ -7,6 +7,8 @@ public class University {
             int opcion;
             List<Estudiante> estudiante = new ArrayList<>();
             List<Profesor> profesor = new ArrayList<>();
+            List<Asignaturas> notas = new ArrayList<>();
+            List<Asignaturas> materia = new ArrayList<>();
 
             do {
                 System.out.println("Ingrese una opción");
@@ -14,6 +16,7 @@ public class University {
                 System.out.println("1. Registre Estudiante");
                 System.out.println("2. Registro Profesor");
                 System.out.println("3. Resgistro de Materias");
+                System.out.println("4. Promedio de Notas");
                 System.out.println("0. Salir del programa");
                 opcion = scanner.nextInt();
                 switch (opcion){
@@ -90,6 +93,9 @@ public class University {
                             System.out.println(" ");
                             System.out.println("Ingrese el nombre de la materia");
                             String nMateria = scanner.next();
+                            Asignaturas asig4 = new Asignaturas();
+                            asig4.setnMateria(nMateria);
+                            materia.add(asig4);
                             System.out.println();
                             System.out.println("Ingrese el ID del estudiante");
                             int idEstudiante = scanner.nextInt();
@@ -107,6 +113,7 @@ public class University {
 
                                     for (Profesor profesor1 : profesor){
 
+
                                         if (nProfesor == profesor1.getId()){
 
                                             System.out.println("Profesor registrado");
@@ -116,6 +123,9 @@ public class University {
                                             float nota = scanner.nextFloat();
                                             System.out.println();
                                             asig.notaCorrespondiente(nota);
+                                            Asignaturas asig6 = new Asignaturas();
+                                            asig6.setNota(nota);
+                                            notas.add(asig6);
                                             System.out.println("Porfavor diganos en que posicion registro al alunmo siendo 0 la primera y 1, 2, etc las siguientes");
                                             int n = scanner.nextInt();
                                             System.out.println();
@@ -151,6 +161,25 @@ public class University {
                             System.out.println("Error: " + e.getMessage());
                         }
                         break;
+                    case 4:
+                        float contador = 0;
+                        int contador2 = 0;
+                        System.out.println("Digite la posicion donde registro al estudiante: ");
+                        int n = scanner.nextInt();
+
+                        for (int i = n; i < estudiante.size();) {
+                            for (int j = n; j < notas.size(); j++) {
+                                contador2 ++;
+                                if (notas.get(j).getNota() != 0){
+                                    contador += notas.get(j).getNota();
+                                }
+                            }
+                            break;
+                        }
+                    
+                        System.out.println("Su promedio es: " + contador/contador2);
+
+
                 }
             }while (opcion != 0);
         }
